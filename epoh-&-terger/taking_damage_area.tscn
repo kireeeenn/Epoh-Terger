@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://domt2hxb4tc8l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmpqe"]
+size = Vector2(106.75, 135.375)
+
+[node name="Taking damage area" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -5.3125)
+shape = SubResource("RectangleShape2D_lmpqe")

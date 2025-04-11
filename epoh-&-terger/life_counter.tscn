@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://u0ja3ttamlxx"]
+
+[ext_resource type="Script" path="res://scenes/hp.gd" id="1_apgdr"]
+
+[node name="GUI" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+script = ExtResource("1_apgdr")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bacvl6hw8y4ds"]
+
+[ext_resource type="FontFile" uid="uid://bpd651xub222s" path="res://assets/Bytesized-Regular.ttf" id="1_4u6tm"]
+
+[node name="ColorRect" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.601305, 0.38674, 0.351595, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 155.0
+offset_right = 907.0
+offset_bottom = 343.0
+theme_override_colors/font_color = Color(0.447059, 0.780392, 0.72549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.297862, 0.580796, 0.571458, 1)
+theme_override_fonts/font = ExtResource("1_4u6tm")
+theme_override_font_sizes/font_size = 150
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1

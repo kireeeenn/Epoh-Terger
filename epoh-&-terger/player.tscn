@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2dkdfvt7wvio"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_jwqpk"]
+[ext_resource type="Texture2D" uid="uid://d0auesspcvk7v" path="res://assets/rayyani_pixel_art.png" id="2_gu46b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhhpw"]
+size = Vector2(63, 76)
+
+[sub_resource type="Animation" id="Animation_lfdmf"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_edde5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [58]
+}
+
+[sub_resource type="Animation" id="Animation_0c6ku"]
+resource_name = "Walk"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333, 0.5, 0.866667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [4, 5, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pg6xn"]
+_data = {
+"Idle": SubResource("Animation_lfdmf"),
+"RESET": SubResource("Animation_edde5"),
+"Walk": SubResource("Animation_0c6ku")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wi51"]
+size = Vector2(63, 76)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_jwqpk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 26)
+shape = SubResource("RectangleShape2D_mhhpw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 22)
+texture = ExtResource("2_gu46b")
+hframes = 8
+vframes = 4
+frame = 3
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pg6xn")
+}
+
+[node name="EnemyDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
+position = Vector2(-0.5, 26)
+shape = SubResource("RectangleShape2D_1wi51")

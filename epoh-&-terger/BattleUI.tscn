@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://mnv2c51nyjh5"]
+
+[ext_resource type="Script" path="res://battle_ui.gd" id="1_ulyl8"]
+
+[node name="Battle UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 50.0
+offset_bottom = 77.0
+script = ExtResource("1_ulyl8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 50.0
+offset_bottom = 77.0
+
+[node name="AttackButton" type="LinkButton" parent="VBoxContainer"]
+layout_mode = 2
+text = "Attack"
+
+[node name="ListenButton" type="LinkButton" parent="VBoxContainer"]
+layout_mode = 2
+text = "Listen"
+
+[node name="HugButton" type="LinkButton" parent="VBoxContainer"]
+layout_mode = 2
+text = "Hug"
