@@ -8,7 +8,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.601305, 0.38674, 0.351595, 1)
+color = Color(0.369635, 0.468527, 0.51467, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -21,6 +21,6 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.297862, 0.580796, 0.571458, 1)
 theme_override_fonts/font = ExtResource("1_s882a")
 theme_override_font_sizes/font_size = 150
-text = "GAME OVER"
+text = "YOU WIN"
 horizontal_alignment = 1
 vertical_alignment = 1

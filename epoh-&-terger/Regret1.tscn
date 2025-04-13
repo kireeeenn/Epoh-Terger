@@ -1,17 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://drdkwp5h4aigm"]
 
 [ext_resource type="Script" path="res://regret_1.gd" id="1_ahwwa"]
-[ext_resource type="Texture2D" uid="uid://8u26lp8diuhg" path="res://assets/fishBlue.png" id="1_m7v2e"]
+[ext_resource type="Texture2D" uid="uid://btpmtxomcpsaq" path="res://assets/sprite3.png" id="2_ffu7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qjix"]
-size = Vector2(84, 111)
+size = Vector2(55, 76)
 
 [node name="Regret1" type="CharacterBody2D"]
 script = ExtResource("1_ahwwa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_m7v2e")
+self_modulate = Color(1, 0.172549, 1, 0.643137)
+texture = ExtResource("2_ffu7e")
+hframes = 12
+vframes = 8
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_1qjix")

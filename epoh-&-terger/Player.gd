@@ -17,13 +17,13 @@ func _on_enemy_detected(body):
 
 func get_input():
 	velocity = Vector2.ZERO
-	if Input.is_action_pressed("ui_right") or Input.is_action_pressed("right"):
+	if Input.is_action_pressed("ui_right"):
 		velocity.x += speed
-	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("left"):
+	if Input.is_action_pressed("ui_left") :
 		velocity.x -= speed
-	if Input.is_action_pressed("ui_down") or Input.is_action_pressed("down"):
+	if Input.is_action_pressed("ui_down") :
 		velocity.y += speed
-	if Input.is_action_pressed("ui_up") or Input.is_action_pressed("up"):
+	if Input.is_action_pressed("ui_up"):
 		velocity.y -= speed
 
 
@@ -41,6 +41,8 @@ func _physics_process(delta):
 	if can_take_damage:
 		for i in range(get_slide_collision_count()):
 			var collision = get_slide_collision(i)
+			var object_name = collision.get_collider().name
+			print("Collided with: ", object_name)
 			if collision.get_collider().is_in_group("Assertive_Enemy") or collision.get_collider().is_in_group("PassiveEnemy"):
 				print("Player hit enemy!")
 				Global.lives -= 1
@@ -49,7 +51,8 @@ func _physics_process(delta):
 				can_take_damage = false
 				break # avoid double hit in same frame
 			elif collision.get_collider().is_in_group("Passive_Enemy"):
-				get_tree().change_scene_to_file(str("res://Battle.tscn"))
+				Global.current_enemy=object_name
+				get_tree().change_scene_to_file(str("res://src/Battle.tscn"))
 
 
 func _process(_delta):

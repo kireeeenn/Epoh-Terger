@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://d2dkdfvt7wvio"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_jwqpk"]
-[ext_resource type="Texture2D" uid="uid://d0auesspcvk7v" path="res://assets/rayyani_pixel_art.png" id="2_gu46b"]
+[ext_resource type="Texture2D" uid="uid://btpmtxomcpsaq" path="res://assets/sprite3.png" id="2_605xu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhhpw"]
-size = Vector2(63, 76)
+size = Vector2(57, 76)
 
 [sub_resource type="Animation" id="Animation_lfdmf"]
 resource_name = "Idle"
@@ -15,10 +15,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.0333333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [49]
 }
 
 [sub_resource type="Animation" id="Animation_edde5"]
@@ -45,10 +45,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.133333, 0.5, 0.866667),
+"times": PackedFloat32Array(0.0333333, 0.366667, 0.666667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [4, 5, 3]
+"values": [48, 49, 50]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pg6xn"]
@@ -59,21 +59,19 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1wi51"]
-size = Vector2(63, 76)
+size = Vector2(60, 81)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_jwqpk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 26)
 shape = SubResource("RectangleShape2D_mhhpw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 22)
-texture = ExtResource("2_gu46b")
-hframes = 8
-vframes = 4
-frame = 3
+texture = ExtResource("2_605xu")
+hframes = 12
+vframes = 8
+frame = 58
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -85,5 +83,4 @@ libraries = {
 [node name="EnemyDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
-position = Vector2(-0.5, 26)
 shape = SubResource("RectangleShape2D_1wi51")

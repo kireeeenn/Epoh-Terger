@@ -2,4 +2,4 @@ extends Label
 
 
 func _process(_delta):
-	self.text = "Lives : " + str(Global.lives)
+	self.text = "Battery lives: " + str(Global.lives)

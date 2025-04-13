@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcu71pi76en6u"]
+
+[ext_resource type="Texture2D" uid="uid://c5t0tg0jm48ev" path="res://assets/items_house.png" id="1_nx4po"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sj3uv"]
+size = Vector2(142, 34)
+
+[node name="kitchen" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -3)
+shape = SubResource("RectangleShape2D_sj3uv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, 7)
+texture = ExtResource("1_nx4po")
+region_enabled = true
+region_rect = Rect2(324.343, 162.128, 143.782, 56.019)

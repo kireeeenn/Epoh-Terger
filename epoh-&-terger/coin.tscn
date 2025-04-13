@@ -3,12 +3,13 @@
 [ext_resource type="Script" path="res://interation_artefact.gd" id="1_jxghw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_luod2"]
-size = Vector2(68, 62)
+size = Vector2(110, 163)
 
 [node name="Coin Area" type="Area2D"]
 script = ExtResource("1_jxghw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0.5)
 shape = SubResource("RectangleShape2D_luod2")
 
 [connection signal="body_entered" from="." to="." method="_on_area_entered"]
